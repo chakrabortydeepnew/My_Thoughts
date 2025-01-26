@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    min-height: 100vh;
+    background: #1a1a1a;
+    color: #fff;
+    line-height: 1.8;
+    background-image: 
+        linear-gradient(45deg, rgba(123, 31, 162, 0.1) 0%, rgba(103, 58, 183, 0.1) 100%),
+        radial-gradient(circle at center, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 5rem 1.5rem;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #d4af37, transparent);
+}
+
+.title {
+    font-size: 3rem;
+    color: #d4af37;
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin-bottom: 1.5rem;
+}
+
+.ornament {
+    color: #d4af37;
+    font-size: 1.5rem;
+    margin: 0 1rem;
+    opacity: 0.8;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.image-container {
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.image-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(212, 175, 55, 0.2), transparent);
+    pointer-events: none;
+}
+
+.image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.image:hover {
+    transform: scale(1.05);
+}
+
+.message {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 3rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.message p {
+    color: #e6e6e6;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.message p:last-child {
+    margin-bottom: 0;
+}
+
+.quote {
+    text-align: center;
+    font-style: italic;
+    color: #d4af37;
+    margin-top: 3rem;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 640px) {
+    .container {
+        padding: 3rem 1rem;
+    }
+
+    .title {
+        font-size: 2.2rem;
+    }
+
+    .image {
+        height: 200px;
+    }
+
+    .message {
+        padding: 2rem;
+    }
+}
